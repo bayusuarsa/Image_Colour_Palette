@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-sm-12 col-md-8">
+        <h1>{{ filename }}</h1>
+
+        <img src="static/images/{{ filename }}">
+
+    </div>
+        <br>
+        <div class="col-sm-12 col-md-8">
+            <br>
+            <h1>Top 10 Colors:</h1>
+            <br>
+            {% for color in palette %}
+            <div style="background-color:rgb({{ color[0] }}, {{ color[1] }}, {{ color[2] }});">
+            <table>
+            <tr>
+            <td>
+            <h1>rgb({{ color[0]|int }}, {{ color[1]|int }}, {{ color[2]|int }}) </h1>
+            </td>
+            </table>
+            </div>
+            <br>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
